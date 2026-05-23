@@ -8,7 +8,7 @@ app.use(express.json());
 // Simular una base de datos en memoria
 let recordatorios = [];
 
-// Ruta para obtener todos los recordatorios
+// Ruta para obtener todos los recordatorios (necesaria para tu App de React)
 app.get('/api/recordatorios', (req, res) => {
   res.json(recordatorios);
 });
@@ -31,7 +31,6 @@ app.post('/api/recordatorios', (req, res) => {
   recordatorios.push(nuevoRecordatorio);
   res.status(201).json({ mensaje: 'Recordatorio creado', data: nuevoRecordatorio });
 });
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
